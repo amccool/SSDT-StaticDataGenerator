@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticGenerator", "Win\StaticGenerator.csproj", "{4159A0A2-2727-49B0-BD93-97F526EABE68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticGeneratorCommon", "StaticGeneratorCommon\StaticGeneratorCommon.csproj", "{7DD07B6F-F6DA-4BDB-BB2E-428101607E47}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "StaticDataSetup", "StaticDataSetup\StaticDataSetup.vdproj", "{AD93DC4C-2F17-4683-B299-767C901DADA8}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectUniqueName0 = Win\\StaticGenerator.csproj
+		SccProjectName0 = \u0022$/StaticGenerator/StaticGenerator\u0022,\u0020COAAAAAA
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		SccProjectFilePathRelativizedFromConnection0 = Win\\
+		SccProjectUniqueName1 = StaticDataSetup\\StaticDataSetup.vdproj
+		SccProjectName1 = \u0022$/StaticGenerator/StaticGenerator\u0022,\u0020COAAAAAA
+		SccLocalPath1 = .
+		SccProvider1 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		SccProjectFilePathRelativizedFromConnection1 = StaticDataSetup\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4159A0A2-2727-49B0-BD93-97F526EABE68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4159A0A2-2727-49B0-BD93-97F526EABE68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4159A0A2-2727-49B0-BD93-97F526EABE68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4159A0A2-2727-49B0-BD93-97F526EABE68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DD07B6F-F6DA-4BDB-BB2E-428101607E47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DD07B6F-F6DA-4BDB-BB2E-428101607E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DD07B6F-F6DA-4BDB-BB2E-428101607E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DD07B6F-F6DA-4BDB-BB2E-428101607E47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD93DC4C-2F17-4683-B299-767C901DADA8}.Debug|Any CPU.ActiveCfg = Debug
+		{AD93DC4C-2F17-4683-B299-767C901DADA8}.Debug|Any CPU.Build.0 = Debug
+		{AD93DC4C-2F17-4683-B299-767C901DADA8}.Release|Any CPU.ActiveCfg = Release
+		{AD93DC4C-2F17-4683-B299-767C901DADA8}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
