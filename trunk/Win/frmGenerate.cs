@@ -43,7 +43,7 @@ namespace StaticGenerator
 
                 DataTable dtTableList = new DataTable("Tables");
                 SqlCommand cdTableList = Globals.Connection.CreateCommand();
-                cdTableList.CommandText = "select table_name as Name from INFORMATION_SCHEMA.Tables where TABLE_TYPE = 'BASE TABLE'";
+                cdTableList.CommandText = "select table_name as Name from INFORMATION_SCHEMA.TABLES where TABLE_TYPE = 'BASE TABLE'";
                 dtTableList.Load(cdTableList.ExecuteReader(CommandBehavior.CloseConnection));
 
                 foreach (DataRow drTableName in dtTableList.Rows)
