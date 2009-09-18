@@ -43,12 +43,12 @@ namespace StaticGenerator
 
                 DataTable dtTableList = new DataTable("Tables");
                 SqlCommand cdTableList = Globals.Connection.CreateCommand();
-                cdTableList.CommandText = "select table_name as Name from INFORMATION_SCHEMA.TABLES where TABLE_TYPE = 'BASE TABLE'";
+                cdTableList.CommandText = "SELECT TABLE_NAME, TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'";
                 dtTableList.Load(cdTableList.ExecuteReader(CommandBehavior.CloseConnection));
 
                 foreach (DataRow drTableName in dtTableList.Rows)
                 {
-                    clbTables.Items.Add(drTableName[0].ToString());
+                    clbTables.Items.Add(string.Format("{0}.{1}", drTableName[1].ToString(), drTableName[0].ToString()));
                 }
 
                 clbTables.Sorted = true;
