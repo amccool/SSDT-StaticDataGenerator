@@ -32,3 +32,7 @@ SET NOCOUNT ON
 {3}
 
 PRINT 'Finished updating static data table <TABLENAME>'
+
+-- Note: If you are not using the new GDR version of DBPro
+-- then remove this go command.
+GO
