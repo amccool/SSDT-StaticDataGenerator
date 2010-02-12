@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_1ABA3058AA4B353659CE0B8679FE6194"
+        "OwnerKey" = "8:_7564D001AC244CABAF2D280F81FFD6F4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_20FCDD35D85E4E10A4C5CF06C4B075C0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -29,6 +35,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_7564D001AC244CABAF2D280F81FFD6F4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1ABA3058AA4B353659CE0B8679FE6194"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -121,6 +133,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1ABA3058AA4B353659CE0B8679FE6194"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:StaticGeneratorCommon, Version=1.4.3.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_1ABA3058AA4B353659CE0B8679FE6194"
+                    {
+                    "Name" = "8:StaticGeneratorCommon.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:StaticGeneratorCommon.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_73C9B7B71E9A4230A0A0290D7664B5B3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_20FCDD35D85E4E10A4C5CF06C4B075C0"
             {
             "SourcePath" = "8:..\\Win\\DefaultTemplate.sql"
@@ -208,14 +251,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Static Data Script Generator"
-        "ProductCode" = "8:{032832DA-4D10-49A5-A55C-1BA73AA4F5BF}"
-        "PackageCode" = "8:{633673B1-EC13-4023-84A8-8B66B32F8EED}"
+        "ProductCode" = "8:{CADEF4AF-4B06-492A-BB44-337B8761F618}"
+        "PackageCode" = "8:{AD00ECED-6C20-46C1-A8B2-57BAC1AE01E1}"
         "UpgradeCode" = "8:{65C00986-5209-4634-814B-C6ECD9715520}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.4.3"
         "Manufacturer" = "8:Leon Mayne"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://leon.mvps.org/StaticData/"
@@ -743,7 +786,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_7564D001AC244CABAF2D280F81FFD6F4"
             {
-            "SourcePath" = "8:..\\Win\\obj\\Debug\\Static Data Script Generator.exe"
+            "SourcePath" = "8:..\\Win\\obj\\Release\\Static Data Script Generator.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_73C9B7B71E9A4230A0A0290D7664B5B3"
