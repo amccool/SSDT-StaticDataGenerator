@@ -48,7 +48,7 @@ namespace StaticGenerator
 
                 foreach (DataRow drTableName in dtTableList.Rows)
                 {
-                    clbTables.Items.Add(string.Format("{0}.{1}", drTableName[1].ToString(), drTableName[0].ToString()));
+                    clbTables.Items.Add(string.Format("[{0}].[{1}]", drTableName[1].ToString(), drTableName[0].ToString()));
                 }
 
                 clbTables.Sorted = true;
@@ -106,7 +106,7 @@ namespace StaticGenerator
                 string strNewTemplate = strTemplate.Replace("<TABLENAME>", strTableName);
 
                 // Create the file
-                StreamWriter swOutFile = new StreamWriter(Path.Combine(txtFolder.Text, strTableName) + ".staticdata.sql", false);
+                StreamWriter swOutFile = new StreamWriter(Path.Combine(txtFolder.Text, strTableName.Replace("[", "").Replace("]", "")) + ".staticdata.sql", false);
                 swOutFile.Write(Globals.CreateStaticDataManager(strTableName, strNewTemplate));
                 swOutFile.Close();
             }
