@@ -122,7 +122,7 @@ namespace StaticGeneratorCommon
                     }
 
                     // Add to the table definition
-                    string strNewLine = drTableField[dtTableSchema.Columns["ColumnName"]] + " " + drTableField[dtTableSchema.Columns["DataTypeName"]].ToString();
+                    string strNewLine = string.Format("[{0}] {1}", drTableField[dtTableSchema.Columns["ColumnName"]], drTableField[dtTableSchema.Columns["DataTypeName"]].ToString());
                     if (drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("varchar") ||
                         drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("nvarchar") ||
                         drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("decimal") ||
@@ -157,7 +157,7 @@ namespace StaticGeneratorCommon
                 string strInsert = "INSERT INTO @tblTempTable (";
                 foreach (DataRow drTableField in dtTableSchema.Rows)
                 {
-                    strInsert += drTableField[dtTableSchema.Columns["ColumnName"]] + ", ";
+                    strInsert += string.Format("[{0}], ", drTableField[dtTableSchema.Columns["ColumnName"]]);
                 }
                 // Remove trailing comma and add closing bracket
                 strInsert = strInsert.Substring(0, strInsert.Length - 2) + ")";
@@ -195,12 +195,12 @@ namespace StaticGeneratorCommon
                      "FROM @tblTempTable tmp" + Environment.NewLine + "LEFT JOIN " + pstrTableName + " tbl ON ";
                 foreach (string strKey in strPrimaryKeyColumns)
                 {
-                    strLiveInsert += "tbl." + strKey + " = tmp." + strKey + " AND ";
+                    strLiveInsert += "tbl.[" + strKey + "] = tmp.[" + strKey + "] AND ";
                 }
                 strLiveInsert = strLiveInsert.Substring(0, strLiveInsert.Length - 5) + Environment.NewLine + "WHERE ";
                 foreach (string strKey in strPrimaryKeyColumns)
                 {
-                    strLiveInsert += "tbl." + strKey + " IS NULL AND ";
+                    strLiveInsert += "tbl.[" + strKey + "] IS NULL AND ";
                 }
                 strLiveInsert = strLiveInsert.Substring(0, strLiveInsert.Length - 5);
 
@@ -221,7 +221,7 @@ namespace StaticGeneratorCommon
                         strPrimaryKeyColumns.Contains(myField[dtTableSchema.Columns["ColumnName"]].ToString()) == false)
                     {
                         string strColumnName = myField[dtTableSchema.Columns["ColumnName"]].ToString();
-                        strUpdate += "LiveTable." + strColumnName + " = tmp." + strColumnName + "," + Environment.NewLine;
+                        strUpdate += "LiveTable.[" + strColumnName + "] = tmp.[" + strColumnName + "]," + Environment.NewLine;
                     }
                 }
                 // Trim trailing comma and add the rest of the script
@@ -229,7 +229,7 @@ namespace StaticGeneratorCommon
                     "FROM " + pstrTableName + " LiveTable " + Environment.NewLine + "INNER JOIN @tblTempTable tmp ON ";
                 foreach (string strKey in strPrimaryKeyColumns)
                 {
-                    strUpdate += "LiveTable." + strKey + " = tmp." + strKey + " AND ";
+                    strUpdate += "LiveTable.[" + strKey + "] = tmp.[" + strKey + "] AND ";
                 }
                 strUpdate = strUpdate.Substring(0, strUpdate.Length - 5);
 
@@ -267,11 +267,11 @@ namespace StaticGeneratorCommon
             {
                 if (string.IsNullOrEmpty(strTablePrefix))
                 {
-                    strList += strColumn + ", ";
+                    strList += string.Format("[{0}], ", strColumn);
                 }
                 else
                 {
-                    strList += strTablePrefix + "." + strColumn + ", ";
+                    strList += string.Format("{0}.[{1}], ", strTablePrefix, strColumn);
                 }
             }
             return strList.Substring(0, strList.Length - 2);
