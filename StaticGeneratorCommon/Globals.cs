@@ -127,7 +127,8 @@ namespace StaticGeneratorCommon
                         drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("nvarchar") ||
                         drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("decimal") ||
                         drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("float") ||
-                        drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("nchar")
+                        drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("nchar") ||
+                        drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("char")
                         )
                     {
                         if ((drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("varchar") || drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("nvarchar")) &&
