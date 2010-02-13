@@ -4,6 +4,7 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 using System.Collections;
+using System.Linq;
 
 namespace StaticGeneratorCommon
 {
@@ -13,6 +14,7 @@ namespace StaticGeneratorCommon
 
         private static string _strConnectionString;
         private static SqlConnection _cnConnection;
+        private static string[] _strTypesWithPrecision = {"varchar", "nvarchar", "decimal", "float", "char", "nchar"};
 
         #endregion
 
@@ -123,13 +125,7 @@ namespace StaticGeneratorCommon
 
                     // Add to the table definition
                     string strNewLine = string.Format("[{0}] {1}", drTableField[dtTableSchema.Columns["ColumnName"]], drTableField[dtTableSchema.Columns["DataTypeName"]].ToString());
-                    if (drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("varchar") ||
-                        drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("nvarchar") ||
-                        drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("decimal") ||
-                        drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("float") ||
-                        drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("nchar") ||
-                        drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("char")
-                        )
+                    if (_strTypesWithPrecision.Contains(drTableField[dtTableSchema.Columns["DataTypeName"]].ToString()))
                     {
                         if ((drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("varchar") || drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("nvarchar")) &&
                             drTableField[dtTableSchema.Columns["ColumnSize"]].ToString() == "2147483647")
