@@ -106,7 +106,7 @@ namespace StaticGenerator
                 string strNewTemplate = strTemplate.Replace("<TABLENAME>", strTableName);
 
                 // Create the file
-                StreamWriter swOutFile = new StreamWriter(Path.Combine(txtFolder.Text, strTableName.Replace("[", "").Replace("]", "")) + ".staticdata.sql", false);
+                StreamWriter swOutFile = new StreamWriter(Path.Combine(txtFolder.Text, StripBrackets(strTableName)) + ".staticdata.sql", false);
                 swOutFile.Write(Globals.CreateStaticDataManager(strTableName, strNewTemplate));
                 swOutFile.Close();
             }
@@ -117,12 +117,23 @@ namespace StaticGenerator
                 StreamWriter swIndex = new StreamWriter(Path.Combine(txtFolder.Text, "index.txt"), false);
                 foreach (string strTableName in clbTables.CheckedItems)
                 {
-                    swIndex.WriteLine(":r .\\StaticData\\" + strTableName + ".staticdata.sql");
+                    swIndex.WriteLine(":r .\\StaticData\\" + StripBrackets(strTableName) + ".staticdata.sql");
                 }
                 swIndex.Close();
             }
 
             MessageBox.Show("Done!!", "Static Data Script Generator", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// Quick hack function to remove the square brackets
+        /// from the table name for use with filenames
+        /// </summary>
+        /// <param name="pText">The text to strip square brackets from</param>
+        /// <returns></returns>
+        private string StripBrackets(string pText)
+        {
+            return pText.Replace("[", "").Replace("]", "");
         }
     }
 }
