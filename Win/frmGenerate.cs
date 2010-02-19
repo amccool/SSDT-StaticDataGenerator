@@ -135,5 +135,13 @@ namespace StaticGenerator
         {
             return pText.Replace("[", "").Replace("]", "");
         }
+
+        private void selectAllCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckState state = selectAllCheckBox.CheckState;
+
+            for(int i=0; i < clbTables.Items.Count; i++)
+                clbTables.SetItemCheckState(i, state);
+        }
     }
 }
