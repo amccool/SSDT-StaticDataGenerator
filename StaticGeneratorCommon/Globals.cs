@@ -223,14 +223,25 @@ namespace StaticGeneratorCommon
                 // Trim trailing comma and add the rest of the script
                 strUpdate = strUpdate.Substring(0, strUpdate.Length - 3) + Environment.NewLine +
                     "FROM " + pstrTableName + " LiveTable " + Environment.NewLine + "INNER JOIN @tblTempTable tmp ON ";
+                string strJoinClause = "";
                 foreach (string strKey in strPrimaryKeyColumns)
                 {
-                    strUpdate += "LiveTable.[" + strKey + "] = tmp.[" + strKey + "] AND ";
+                    strJoinClause += "LiveTable.[" + strKey + "] = tmp.[" + strKey + "] AND ";
                 }
-                strUpdate = strUpdate.Substring(0, strUpdate.Length - 5);
+                strJoinClause = strJoinClause.Substring(0, strJoinClause.Length - 5);
+                strUpdate += strJoinClause;
+
+                // Build delete script
+                string strNullJoin = "";
+                foreach (string strKey in strPrimaryKeyColumns)
+                {
+                    strNullJoin += "tmp.[" + strKey + "] IS NULL AND ";
+                }
+                strNullJoin = strNullJoin.Substring(0, strNullJoin.Length - 5);
+                string strDelete = string.Format("\tDELETE FROM {0} FROM {0} LiveTable\n\tLEFT JOIN @tblTempTable tmp ON {1}\n\tWHERE {2}", pstrTableName, strJoinClause, strNullJoin);
 
                 // Format the provided template with our output
-                string strOutputScript = string.Format(pstrTemplate, strTableDef, strTmpInsert, strLiveInsert, strUpdate);
+                string strOutputScript = string.Format(pstrTemplate, strTableDef, strTmpInsert, strLiveInsert, strUpdate, strDelete);
                 return strOutputScript;
             }
             catch (SqlException)
