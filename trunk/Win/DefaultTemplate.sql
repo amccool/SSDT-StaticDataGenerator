@@ -13,6 +13,13 @@ SET DATEFORMAT dmy
 -- Turn off affected rows being returned
 SET NOCOUNT ON
 
+-- Change this to 1 to delete missing records in the target
+-- WARNING: Setting this to 1 can cause damage to your database
+-- and cause failed deployment if there are any rows referencing
+-- a record which has been deleted.
+DECLARE @DeleteMissingRecords BIT
+SET @DeleteMissingRecords = 0
+
 -- 1: Define table variable
 {0}
 
@@ -30,6 +37,12 @@ SET NOCOUNT ON
 
 -- 4: Update any modified values with the values from the table variable
 {3}
+
+-- 5: Delete any missing records from the target
+IF @DeleteMissingRecords = 1
+BEGIN
+{4}
+END
 
 PRINT 'Finished updating static data table <TABLENAME>'
 
