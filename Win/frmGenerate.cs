@@ -31,7 +31,23 @@ namespace StaticGenerator
 
         private void frmGenerate_Load(object sender, EventArgs e)
         {
+            // Load previous settings
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.LastDropFolder))
+            {
+                this.txtFolder.Text = Properties.Settings.Default.LastDropFolder;
+            }
+            this.chkCreateIndex.Checked = Properties.Settings.Default.LastIndexChoice;
+
+            // Populate the table list
             LoadTableList();
+        }
+
+        private void frmGenerate_Closing(Object sender, FormClosingEventArgs e)
+        {
+            // Save settings
+            Properties.Settings.Default.LastDropFolder = this.txtFolder.Text;
+            Properties.Settings.Default.LastIndexChoice = this.chkCreateIndex.Checked;
+            Properties.Settings.Default.Save();
         }
 
         private void LoadTableList()
@@ -78,6 +94,13 @@ namespace StaticGenerator
             if (string.IsNullOrEmpty(txtFolder.Text) == true)
             {
                 MessageBox.Show("Please select a folder to drop the generated script(s) into", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Make sure the folder exists
+            if (!System.IO.Directory.Exists(this.txtFolder.Text))
+            {
+                MessageBox.Show("The selected folder does not exist. Pleas select a valid directory.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 

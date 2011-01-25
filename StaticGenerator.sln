@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticGenerator", "Win\StaticGenerator.csproj", "{4159A0A2-2727-49B0-BD93-97F526EABE68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticGeneratorCommon", "StaticGeneratorCommon\StaticGeneratorCommon.csproj", "{7DD07B6F-F6DA-4BDB-BB2E-428101607E47}"
