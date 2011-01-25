@@ -149,6 +149,7 @@ namespace StaticGenerator
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generate Static Data Management Scripts";
             this.Load += new System.EventHandler(this.frmGenerate_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGenerate_Closing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
