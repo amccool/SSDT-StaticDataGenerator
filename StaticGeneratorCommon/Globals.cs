@@ -14,7 +14,7 @@ namespace StaticGeneratorCommon
 
         private static string _strConnectionString;
         private static SqlConnection _cnConnection;
-        private static string[] _strTypesWithPrecision = {"varchar", "nvarchar", "decimal", "float", "char", "nchar"};
+        private static string[] _strTypesWithPrecision = {"varchar", "nvarchar", "decimal", "char", "nchar"};
 
         #endregion
 
