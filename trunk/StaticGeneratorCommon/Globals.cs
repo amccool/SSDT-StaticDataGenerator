@@ -146,7 +146,7 @@ namespace StaticGeneratorCommon
                 // Die if we do not have a primary key
                 if (strPrimaryKeyColumns.Count == 0)
                 {
-                    throw new Exception("A primary key is required to synchronize changes to the table!");
+                    throw new Exception(string.Format("A primary key is required on {0} to synchronize changes to the table!", pstrTableName));
                 }
 
                 // Create insert stub
@@ -159,12 +159,13 @@ namespace StaticGeneratorCommon
                 strInsert = strInsert.Substring(0, strInsert.Length - 2) + ")";
 
                 string strTmpInsert = "";
+                StringBuilder sbTmpInsert = new StringBuilder();
 
                 // Add table data
                 foreach (DataRow drResult in dsTableInfo.Tables[0].Rows)
                 {
                     // Add the opening bracket
-                    strTmpInsert += strInsert + " VALUES (";
+                    sbTmpInsert.Append(strInsert + " VALUES (");
                     for (int i = 0; i < dsTableInfo.Tables[0].Columns.Count; i++)
                     {
                         // Add the values to the insert statement
@@ -179,11 +180,17 @@ namespace StaticGeneratorCommon
                             // Always add quotes around the value, as SQL Server can handle this
                             strValue = "'" + strValue + "'";
                         }
-                        strTmpInsert += strValue + ", ";
+                        if (i == dsTableInfo.Tables[0].Columns.Count - 1)
+                        {
+                            sbTmpInsert.Append(strValue + ")" + Environment.NewLine);
+                        }
+                        else
+                        {
+                            sbTmpInsert.Append(strValue + ", ");
+                        }
                     }
-                    // Trim trailing comma and add closing bracket
-                    strTmpInsert = strTmpInsert.Substring(0, strTmpInsert.Length - 2) + ")" + Environment.NewLine;
                 }
+                strTmpInsert = sbTmpInsert.ToString();
 
                 // Create live insert code
                 string strLiveInsert = "INSERT INTO " + pstrTableName + " (" + FlattenColumnList(strColumns, null) + ")" + Environment.NewLine +
