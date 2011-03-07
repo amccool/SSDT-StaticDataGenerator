@@ -177,6 +177,11 @@ namespace StaticGeneratorCommon
                         }
                         else
                         {
+                            // If this is a double / float column, some locales use commas instead of full stops, which breaks the script
+                            if (dsTableInfo.Tables[0].Columns[i].DataType.Name.Equals("Double"))
+                            {
+                                strValue = strValue.Replace(",", ".");
+                            }
                             // Always add quotes around the value, as SQL Server can handle this
                             strValue = "'" + strValue + "'";
                         }
