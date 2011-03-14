@@ -169,7 +169,16 @@ namespace StaticGeneratorCommon
                     for (int i = 0; i < dsTableInfo.Tables[0].Columns.Count; i++)
                     {
                         // Add the values to the insert statement
-                        string strValue = drResult[i].ToString().Replace("'", "''");
+                        string strValue = "";
+                        // Make sure the ms precision is included if this is a datetime column
+                        if (dsTableInfo.Tables[0].Columns[i].DataType.Name.Equals("DateTime") && !drResult[i].Equals(DBNull.Value))
+                        {
+                            strValue = ((DateTime)drResult[i]).ToString("yyyy-MM-dd HH:mm:ss.fff");
+                        }
+                        else
+                        {
+                            strValue = drResult[i].ToString().Replace("'", "''");
+                        }
                         if (drResult[i].Equals(DBNull.Value) || strValue.Equals("System.Byte[]") || strValue == "system.dbnull")
                         {
                             // If the value is null then use NULL
