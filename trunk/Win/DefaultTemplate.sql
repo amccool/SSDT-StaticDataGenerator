@@ -7,9 +7,6 @@
 
 PRINT 'Updating static data table <TABLENAME>'
 
--- Set to your region's date format to ensure dates are updated correctly
-SET DATEFORMAT dmy
-
 -- Turn off affected rows being returned
 SET NOCOUNT ON
 
