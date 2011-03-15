@@ -7,6 +7,9 @@
 
 PRINT 'Updating static data table <TABLENAME>'
 
+-- Set date format to ensure text dates are parsed correctly
+SET DATEFORMAT ymd
+
 -- Turn off affected rows being returned
 SET NOCOUNT ON
 
