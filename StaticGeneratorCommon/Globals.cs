@@ -96,8 +96,7 @@ namespace StaticGeneratorCommon
                 daTableInfo.Fill(dsTableInfo);
 
                 // Get Schema
-                DataTable dtTableSchema = cdTableInfo.ExecuteReader(CommandBehavior.KeyInfo |
-                    CommandBehavior.SchemaOnly).GetSchemaTable();
+                DataTable dtTableSchema = cdTableInfo.ExecuteReader(CommandBehavior.KeyInfo | CommandBehavior.SchemaOnly).GetSchemaTable();
 
                 // Create table definition and column list
                 string strTableDef = "DECLARE @tblTempTable TABLE (" + Environment.NewLine;
@@ -107,18 +106,25 @@ namespace StaticGeneratorCommon
                 foreach (DataRow drTableField in dtTableSchema.Rows)
                 {
                     // Is this the primary key?
-                    if ((bool)drTableField[dtTableSchema.Columns["IsKey"]] == true)
+                    if ((bool)drTableField[dtTableSchema.Columns["IsKey"]])
                     {
                         strPrimaryKeyColumns.Add(drTableField[dtTableSchema.Columns["ColumnName"]].ToString());
                     }
+					
+					// Don't consider calculated Columns
+					if( !(bool)drTableField[dtTableSchema.Columns["IsIdentity"]] && (bool)drTableField[dtTableSchema.Columns["IsReadOnly"]] )
+					{
+						continue;
+					}
+
                     // Is this an identity column?
-                    if ((bool)drTableField[dtTableSchema.Columns["IsIdentity"]] == true)
+                    if ((bool)drTableField[dtTableSchema.Columns["IsIdentity"]])
                     {
                         blnHasIdentity = true;
                     }
 
                     // Add to the column list if this is not a timestamp column
-                    if (drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("timestamp") == false)
+                    if (!drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("timestamp"))
                     {
                         strColumns.Add(drTableField[dtTableSchema.Columns["ColumnName"]].ToString());
                     }
@@ -153,7 +159,13 @@ namespace StaticGeneratorCommon
                 string strInsert = "INSERT INTO @tblTempTable (";
                 foreach (DataRow drTableField in dtTableSchema.Rows)
                 {
-                    strInsert += string.Format("[{0}], ", drTableField[dtTableSchema.Columns["ColumnName"]]);
+					// Don't consider calculated Columns
+					if( !(bool)drTableField[dtTableSchema.Columns["IsIdentity"]] && (bool)drTableField[dtTableSchema.Columns["IsReadOnly"]] )
+					{
+						continue;
+					}
+
+					strInsert += string.Format( "[{0}], ", drTableField[dtTableSchema.Columns["ColumnName"]] );
                 }
                 // Remove trailing comma and add closing bracket
                 strInsert = strInsert.Substring(0, strInsert.Length - 2) + ")";
@@ -164,11 +176,17 @@ namespace StaticGeneratorCommon
                 // Add table data
                 foreach (DataRow drResult in dsTableInfo.Tables[0].Rows)
                 {
-                    // Add the opening bracket
+					// Add the opening bracket
                     sbTmpInsert.Append(strInsert + " VALUES (");
                     for (int i = 0; i < dsTableInfo.Tables[0].Columns.Count; i++)
                     {
-                        // Add the values to the insert statement
+						// Don't consider calculated Columns
+						if( !(bool)dtTableSchema.Rows[i]["IsIdentity"] && (bool)dtTableSchema.Rows[i]["IsReadOnly"] )
+						{
+							continue;
+						}
+						
+						// Add the values to the insert statement
                         string strValue = "";
                         // Make sure the ms precision is included if this is a datetime column
                         if (dsTableInfo.Tables[0].Columns[i].DataType.Name.Equals("DateTime") && !drResult[i].Equals(DBNull.Value))
@@ -222,7 +240,7 @@ namespace StaticGeneratorCommon
                 strLiveInsert = strLiveInsert.Substring(0, strLiveInsert.Length - 5);
 
                 // Add IDENTITY INSERT statements if this table has an identity column
-                if (blnHasIdentity == true)
+                if (blnHasIdentity)
                 {
                     strLiveInsert = "SET IDENTITY_INSERT " + pstrTableName + " ON" + Environment.NewLine +
                         strLiveInsert + Environment.NewLine +
@@ -233,9 +251,15 @@ namespace StaticGeneratorCommon
                 string strUpdate = "UPDATE LiveTable SET" + Environment.NewLine;
                 foreach (DataRow myField in dtTableSchema.Rows)
                 {
-                    // Add the column if this is not a timestamp column or the primary key
-                    if (myField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("timestamp") == false &&
-                        strPrimaryKeyColumns.Contains(myField[dtTableSchema.Columns["ColumnName"]].ToString()) == false)
+					// Don't consider calculated Columns
+					if( !(bool)myField[dtTableSchema.Columns["IsIdentity"]] && (bool)myField[dtTableSchema.Columns["IsReadOnly"]] )
+					{
+						continue;
+					}
+
+					// Add the column if this is not a timestamp column or the primary key
+                    if (!myField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("timestamp") &&
+                        !strPrimaryKeyColumns.Contains(myField[dtTableSchema.Columns["ColumnName"]].ToString()))
                     {
                         string strColumnName = myField[dtTableSchema.Columns["ColumnName"]].ToString();
                         strUpdate += "LiveTable.[" + strColumnName + "] = tmp.[" + strColumnName + "]," + Environment.NewLine;
