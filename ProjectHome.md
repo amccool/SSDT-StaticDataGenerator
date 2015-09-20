@@ -1,0 +1,1 @@
+Creates scripts to manage static data in source control stored projects
