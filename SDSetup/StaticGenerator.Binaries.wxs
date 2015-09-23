@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="APPLICATIONFOLDER">
+            <Component Id="cmp23C176A26E1971B97FEC224F72865435" Guid="*">
+                <File Id="filDD0A96AE9905F1F882DE6A1CC2FBD139" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\DefaultTemplate.sql" />
+            </Component>
+            <Component Id="cmp273717D1805B3C75ABEFF1498DB218D7" Guid="*">
+                <File Id="fil59E78DA9652497F5058F8B2302ABCFE6" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Static Data Script Generator.exe" />
+            </Component>
+            <Component Id="cmpAB253B65C12AF0F85211F68D062E8463" Guid="*">
+                <File Id="fil21346FE3A7F8CC513B8406ABC51B9C2D" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Static Data Script Generator.exe.config" />
+            </Component>
+            <Component Id="cmp59C7C8CB14E6D3588C1B133A00557AB2" Guid="*">
+                <File Id="fil6981637CB6AEFDE2BA6E147C35B9C5EB" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Static Data Script Generator.pdb" />
+            </Component>
+            <Component Id="cmp5D0C39248E832E30EE3860D5E6C69008" Guid="*">
+                <File Id="fil18AB5F60948EE68E9FBD387AB564E2B7" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Static Data Script Generator.vshost.exe" />
+            </Component>
+            <Component Id="cmp8A8ED54F8192D314100F920940B14361" Guid="*">
+                <File Id="fil8C10B6A6B1AF8F8F246ABA9988EC91AE" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Static Data Script Generator.vshost.exe.config" />
+            </Component>
+            <Component Id="cmpB1010C760A6EF3A6DDD6E3B2A9FC9418" Guid="*">
+                <File Id="fil20BD705CBDAA87670A288F31E4C7B8A5" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\StaticGeneratorCommon.dll" />
+            </Component>
+            <Component Id="cmp9CEB510E638222D75F457807C17036FA" Guid="*">
+                <File Id="fil14ADFD9761474AB0F9219147FE6D76E2" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\StaticGeneratorCommon.pdb" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="Binaries">
+            <ComponentRef Id="cmp23C176A26E1971B97FEC224F72865435" />
+            <ComponentRef Id="cmp273717D1805B3C75ABEFF1498DB218D7" />
+            <ComponentRef Id="cmpAB253B65C12AF0F85211F68D062E8463" />
+            <ComponentRef Id="cmp59C7C8CB14E6D3588C1B133A00557AB2" />
+            <ComponentRef Id="cmp5D0C39248E832E30EE3860D5E6C69008" />
+            <ComponentRef Id="cmp8A8ED54F8192D314100F920940B14361" />
+            <ComponentRef Id="cmpB1010C760A6EF3A6DDD6E3B2A9FC9418" />
+            <ComponentRef Id="cmp9CEB510E638222D75F457807C17036FA" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

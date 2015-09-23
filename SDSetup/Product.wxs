@@ -13,23 +13,31 @@
 
         <Directory Name="SourceDir" Id="TARGETDIR">
             <Directory Name="ProgramFilesFolder" Id="ProgramFilesFolder">
-                <Directory Name="Static Data Script Generator" Id="_1">
-                    <Component Id="_1" Guid="3C67513D-01DD-4637-8A68-80971EB9504F">
-                        <!--<File Source="..\Win\DefaultTemplate.sql"/>
-                        <File Source="StaticGeneratorCommon.dll"/>-->
-                      <File Source="$(var.StaticGenerator.TargetPath)" />
-                    </Component>
-                </Directory>
+              <Directory Name="Static Data Script Generator" Id="APPLICATIONFOLDER"/>
             </Directory>
         </Directory>
-      
-        <!--<Directory Name="#1919" Id="_2">
-            <Directory Name="Static Data Script Generator" Id="_3">
-            </Directory>
-        </Directory>-->
 
-        <Feature Id="_1" Level="1">
-            <ComponentRef Id="_1"/>
+      <!-- Step 2: Add files to your installer package --><!--
+      <DirectoryRef Id="APPLICATIONROOTDIRECTORY">
+        <com
+        <Component Id="ApplicationBinaries" Guid="9E28A62D-F27B-44BA-A1B5-F418BB65A7A3">
+          <File Id="AppExecutable" 
+                Name="$(var.StaticGenerator.TargetFileName)" 
+                Source="$(var.StaticGenerator.TargetPath)" KeyPath="yes" Checksum="yes" />
+        </Component>
+        
+        <Component Id="SQLTemplates" Guid="2922B5FF-3DE5-4163-9F68-99C405307B80">
+          <File Id="DefaultTemplate" Name="DefaultTemplate.sql" Source="$(var.StaticGenerator.TargetDir)\DefaultTemplate.sql"  KeyPath="yes"/>
+        </Component>
+      </DirectoryRef>
+      
+                    --><!--<Component Id="_1" Guid="3C67513D-01DD-4637-8A68-80971EB9504F">
+                        <File Source="..\Win\DefaultTemplate.sql"/>
+                        <File Source="StaticGeneratorCommon.dll"/>
+                    </Component>-->
+
+        <Feature Id="AllFeatures" Title="All Features" Level="1">
+          <ComponentGroupRef Id="Binaries"/>
         </Feature>
 
     </Product>
