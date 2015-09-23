@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="78595E9A-9979-41FB-A288-3401C444A151"
+             Name="Static Data Script Generator"
+             Language="1033"
+             Version="1.4.6"
+             Manufacturer="Leon Mayne"
+             UpgradeCode="65C00986-5209-4634-814B-C6ECD9715520">
+
+        <Package Compressed="yes"/>
+
+        <Media Id="1" Cabinet="product.cab" EmbedCab="yes"/>
+
+        <Directory Name="SourceDir" Id="TARGETDIR">
+            <Directory Name="ProgramFilesFolder" Id="ProgramFilesFolder">
+                <Directory Name="Static Data Script Generator" Id="_1">
+                    <Component Id="_1" Guid="3C67513D-01DD-4637-8A68-80971EB9504F">
+                        <!--<File Source="..\Win\DefaultTemplate.sql"/>
+                        <File Source="StaticGeneratorCommon.dll"/>-->
+                      <File Source="$(var.StaticGenerator.TargetPath)" />
+                    </Component>
+                </Directory>
+            </Directory>
+        </Directory>
+      
+        <!--<Directory Name="#1919" Id="_2">
+            <Directory Name="Static Data Script Generator" Id="_3">
+            </Directory>
+        </Directory>-->
+
+        <Feature Id="_1" Level="1">
+            <ComponentRef Id="_1"/>
+        </Feature>
+
+    </Product>
+</Wix>
