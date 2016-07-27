@@ -1,5 +1,4 @@
 version: 1.0.{build}
-skip_tags: true
 build:
   verbosity: minimal
 test: off
