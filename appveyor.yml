@@ -1,0 +1,15 @@
+version: 1.0.{build}
+skip_tags: true
+build:
+  verbosity: minimal
+test: off
+artifacts:
+- path: '**\*.msi'
+  name: MSI
+deploy:
+- provider: GitHub
+  tag: staticdata-v$(appveyor_build_version)
+  release: staticdata-v$(appveyor_build_version)
+  auth_token:
+    secure: Q4r4RlgpLDTflRHvIvoDqh7wBkPWxinhe8sHDv9eR6eMMqejcSTY7PNLJ/08w9pz
+  artifact: MSI
