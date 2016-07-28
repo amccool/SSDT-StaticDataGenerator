@@ -102,6 +102,7 @@ namespace StaticGeneratorCommon
                 string strTableDef = "DECLARE @tblTempTable TABLE (" + Environment.NewLine;
                 ArrayList strColumns = new ArrayList();
                 bool blnHasIdentity = false;
+                bool blnHasColumnsToUpdate = false;
                 ArrayList strPrimaryKeyColumns = new ArrayList();
                 foreach (DataRow drTableField in dtTableSchema.Rows)
                 {
@@ -127,6 +128,11 @@ namespace StaticGeneratorCommon
                     if (!drTableField[dtTableSchema.Columns["DataTypeName"]].ToString().Equals("timestamp"))
                     {
                         strColumns.Add(drTableField[dtTableSchema.Columns["ColumnName"]].ToString());
+                        // Does this table have a column that is not a key?
+                        if ((bool) drTableField[dtTableSchema.Columns["IsKey"]] == false)
+                        {
+                            blnHasColumnsToUpdate = true;
+                        }
                     }
 
                     // Add to the table definition
