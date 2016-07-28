@@ -6,6 +6,12 @@
                 <Component Id="cmpE2C13EF5DCCB582D5BA5738AEDBA007D" Guid="*">
                     <File Id="fil74DDEF1847E91488033A1C826F053C19" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\DefaultTemplate.sql" />
                 </Component>
+                <Component Id="cmpA6F47B6AB656E3CDDC72CEACF9FFFE73" Guid="*">
+                    <File Id="fil62930B32247048FBDAB011C2E5CF3F87" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Microsoft.Data.ConnectionUI.Dialog.dll" />
+                </Component>
+                <Component Id="cmp08A599F537C9B42E7A57B633371807AD" Guid="*">
+                    <File Id="fil34C0D24520E552FA11F67E5B3B4C7E9C" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Microsoft.Data.ConnectionUI.dll" />
+                </Component>
                 <Component Id="cmp44E3C853A640B32490A80667A97C5E1D" Guid="*">
                     <File Id="fil23D7CE083418B666C0CB3704EC205F34" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Static Data Script Generator.exe" />
                 </Component>
@@ -21,9 +27,6 @@
                 <Component Id="cmp84990E56BDCC5720BB2D3AE45AC155DA" Guid="*">
                     <File Id="fil4CFED195558343C393CFB61EF2507E83" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Static Data Script Generator.vshost.exe.config" />
                 </Component>
-                <Component Id="cmpFC8F54BAB84ABB72B41A0155B856F5CF" Guid="*">
-                    <File Id="filECE57EC5077B2DFA30F4B3814AC83C9B" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Static Data Script Generator.vshost.exe.manifest" />
-                </Component>
                 <Component Id="cmp7D2C1543D9CD7F0762293898BD6B539C" Guid="*">
                     <File Id="fil997036E070F87588870E5B084105E712" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\StaticGeneratorCommon.dll" />
                 </Component>
@@ -36,12 +39,13 @@
     <Fragment>
         <ComponentGroup Id="Binaries">
             <ComponentRef Id="cmpE2C13EF5DCCB582D5BA5738AEDBA007D" />
+            <ComponentRef Id="cmpA6F47B6AB656E3CDDC72CEACF9FFFE73" />
+            <ComponentRef Id="cmp08A599F537C9B42E7A57B633371807AD" />
             <ComponentRef Id="cmp44E3C853A640B32490A80667A97C5E1D" />
             <ComponentRef Id="cmp402581BB4E505DC02ADD144314113554" />
             <ComponentRef Id="cmp7F505D14AE1DF17327A17562DB88E646" />
             <ComponentRef Id="cmp9BE3443FEAB75BD7FC19430EB26B2689" />
             <ComponentRef Id="cmp84990E56BDCC5720BB2D3AE45AC155DA" />
-            <ComponentRef Id="cmpFC8F54BAB84ABB72B41A0155B856F5CF" />
             <ComponentRef Id="cmp7D2C1543D9CD7F0762293898BD6B539C" />
             <ComponentRef Id="cmp6CDB32C278DDAEE2F45E21861BB883B8" />
         </ComponentGroup>

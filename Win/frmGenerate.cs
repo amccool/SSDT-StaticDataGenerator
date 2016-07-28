@@ -10,6 +10,7 @@ using StaticGeneratorCommon;
 using System.Data.SqlClient;
 using System.IO;
 using System.Collections;
+using Microsoft.Data.ConnectionUI;
 
 namespace StaticGenerator
 {
@@ -38,8 +39,24 @@ namespace StaticGenerator
             }
             this.chkCreateIndex.Checked = Properties.Settings.Default.LastIndexChoice;
 
-            // Populate the table list
-            LoadTableList();
+
+            DataConnectionDialog dcd = new DataConnectionDialog();
+            DataConnectionConfiguration dcs = new DataConnectionConfiguration(null);
+            dcs.LoadConfiguration(dcd);
+
+            if (DataConnectionDialog.Show(dcd) == DialogResult.OK)
+            {
+
+                Globals.ConnectionString = dcd.ConnectionString;
+
+
+                // Populate the table list
+                LoadTableList();
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void frmGenerate_Closing(Object sender, FormClosingEventArgs e)
@@ -54,8 +71,8 @@ namespace StaticGenerator
         {
             try
             {
-                string strConnectionString = ConfigurationManager.ConnectionStrings["default"].ToString();
-                Globals.ConnectionString = strConnectionString;
+                //string strConnectionString = ConfigurationManager.ConnectionStrings["default"].ToString();
+                //Globals.ConnectionString = strConnectionString;
 
                 DataTable dtTableList = new DataTable("Tables");
                 SqlCommand cdTableList = Globals.Connection.CreateCommand();
