@@ -10,8 +10,9 @@ using System.Text;
 using System.Xml.Linq;
 using System.IO;
 using System.Xml;
+using Microsoft.Data.ConnectionUI;
 
-namespace Microsoft.Data.ConnectionUI
+namespace SSDTThing
 {
     /// <summary>
     /// Provide a default implementation for the storage of DataConnection Dialog UI configuration.
