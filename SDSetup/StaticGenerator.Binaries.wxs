@@ -1,53 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
     <Fragment>
-        <DirectoryRef Id="APPLICATIONFOLDER">
-            <Directory Id="dir3EA83D422F7CBEF2F27940356DEA00B9" Name="Debug">
-                <Component Id="cmpE2C13EF5DCCB582D5BA5738AEDBA007D" Guid="*">
-                    <File Id="fil74DDEF1847E91488033A1C826F053C19" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\DefaultTemplate.sql" />
-                </Component>
-                <Component Id="cmpA6F47B6AB656E3CDDC72CEACF9FFFE73" Guid="*">
-                    <File Id="fil62930B32247048FBDAB011C2E5CF3F87" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Microsoft.Data.ConnectionUI.Dialog.dll" />
-                </Component>
-                <Component Id="cmp08A599F537C9B42E7A57B633371807AD" Guid="*">
-                    <File Id="fil34C0D24520E552FA11F67E5B3B4C7E9C" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Microsoft.Data.ConnectionUI.dll" />
-                </Component>
-                <Component Id="cmp44E3C853A640B32490A80667A97C5E1D" Guid="*">
-                    <File Id="fil23D7CE083418B666C0CB3704EC205F34" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Static Data Script Generator.exe" />
-                </Component>
-                <Component Id="cmp402581BB4E505DC02ADD144314113554" Guid="*">
-                    <File Id="filE361E33B0B75937C0AC1529D2207F8E8" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Static Data Script Generator.exe.config" />
-                </Component>
-                <Component Id="cmp7F505D14AE1DF17327A17562DB88E646" Guid="*">
-                    <File Id="fil223BF76E6009DA43FCB91680D34C919F" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Static Data Script Generator.pdb" />
-                </Component>
-                <Component Id="cmp9BE3443FEAB75BD7FC19430EB26B2689" Guid="*">
-                    <File Id="filBEB957871E623C9E98C40E9C60C77196" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Static Data Script Generator.vshost.exe" />
-                </Component>
-                <Component Id="cmp84990E56BDCC5720BB2D3AE45AC155DA" Guid="*">
-                    <File Id="fil4CFED195558343C393CFB61EF2507E83" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\Static Data Script Generator.vshost.exe.config" />
-                </Component>
-                <Component Id="cmp7D2C1543D9CD7F0762293898BD6B539C" Guid="*">
-                    <File Id="fil997036E070F87588870E5B084105E712" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\StaticGeneratorCommon.dll" />
-                </Component>
-                <Component Id="cmp6CDB32C278DDAEE2F45E21861BB883B8" Guid="*">
-                    <File Id="fil7D5BA58427271BFC2AE1F091AF1A79B9" KeyPath="yes" Source="$(var.StaticGenerator.TargetDir)\StaticGeneratorCommon.pdb" />
-                </Component>
-            </Directory>
+        <DirectoryRef Id="INSTALLFOLDER">
+            <Component Id="cmp1D946EA74B2E5D0E63840DF89C59EAE1" Guid="{CE687BF1-45DB-4EC5-B89F-22DEF15FB70C}">
+                <File Id="fil0B35192EC2221A75F7D5BB84F8AE5339" KeyPath="yes" Source="$(var.BasePath)\DefaultTemplate.sql" />
+            </Component>
+            <Component Id="cmpEC01AF6B8D5EF8A05804D3A5F37944D6" Guid="{CAA364A8-675D-4BFD-93F4-946F3FB0588B}">
+                <File Id="fil20DC857D6CED75D4350C99240E49B652" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Data.ConnectionUI.Dialog.dll" />
+            </Component>
+            <Component Id="cmp19C95D2CAC7F2E9CC50214C3520486AF" Guid="{5F6769EF-D417-4DBF-8C47-A329B9BABFEA}">
+                <File Id="filFDEA74E52032BF1EB6936EA12C942E38" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Data.ConnectionUI.dll" />
+            </Component>
+            <Component Id="cmpAC33A12E307CAEF9F2B14852E7D12BC0" Guid="{9E0CDE1E-3D98-47DE-B8E2-4C9BE62AD1CD}">
+                <File Id="fil4DD3815AE4446001D614F1BA78F63C3E" KeyPath="yes" Source="$(var.BasePath)\Static Data Script Generator.exe" />
+            </Component>
+            <Component Id="cmpD2AEE67DA8242957FE1AEEA005676F58" Guid="{E8B1654D-DF59-4846-A366-6E6FE297B2D2}">
+                <File Id="fil2FC0E7E7A2DA574284860057EBCD006B" KeyPath="yes" Source="$(var.BasePath)\Static Data Script Generator.exe.config" />
+            </Component>
+            <Component Id="cmp9466C8460D8E7244E250CB52CBA31FBF" Guid="{818DDA2C-4440-4D70-A773-11C6DC6982D9}">
+                <File Id="filF50F17721A1A916315E9791BBD8E2E97" KeyPath="yes" Source="$(var.BasePath)\Static Data Script Generator.pdb" />
+            </Component>
+            <Component Id="cmpBC4E046E56032A80CA9312F07ED4E23A" Guid="{9498A554-DDFD-4207-97DC-E53308D4447C}">
+                <File Id="filA43958CC89AD68751040134A46715A7B" KeyPath="yes" Source="$(var.BasePath)\StaticGeneratorCommon.dll" />
+            </Component>
+            <Component Id="cmpCB4CF12AE13B498164BD6122A185419F" Guid="{019F41A5-6726-433A-9D53-735C17068EEF}">
+                <File Id="fil91849FBCF8F2DA9C500C7AE16D2836E8" KeyPath="yes" Source="$(var.BasePath)\StaticGeneratorCommon.pdb" />
+            </Component>
         </DirectoryRef>
     </Fragment>
     <Fragment>
-        <ComponentGroup Id="Binaries">
-            <ComponentRef Id="cmpE2C13EF5DCCB582D5BA5738AEDBA007D" />
-            <ComponentRef Id="cmpA6F47B6AB656E3CDDC72CEACF9FFFE73" />
-            <ComponentRef Id="cmp08A599F537C9B42E7A57B633371807AD" />
-            <ComponentRef Id="cmp44E3C853A640B32490A80667A97C5E1D" />
-            <ComponentRef Id="cmp402581BB4E505DC02ADD144314113554" />
-            <ComponentRef Id="cmp7F505D14AE1DF17327A17562DB88E646" />
-            <ComponentRef Id="cmp9BE3443FEAB75BD7FC19430EB26B2689" />
-            <ComponentRef Id="cmp84990E56BDCC5720BB2D3AE45AC155DA" />
-            <ComponentRef Id="cmp7D2C1543D9CD7F0762293898BD6B539C" />
-            <ComponentRef Id="cmp6CDB32C278DDAEE2F45E21861BB883B8" />
+        <ComponentGroup Id="cmp_INSTALLFOLDER">
+            <ComponentRef Id="cmp1D946EA74B2E5D0E63840DF89C59EAE1" />
+            <ComponentRef Id="cmpEC01AF6B8D5EF8A05804D3A5F37944D6" />
+            <ComponentRef Id="cmp19C95D2CAC7F2E9CC50214C3520486AF" />
+            <ComponentRef Id="cmpAC33A12E307CAEF9F2B14852E7D12BC0" />
+            <ComponentRef Id="cmpD2AEE67DA8242957FE1AEEA005676F58" />
+            <ComponentRef Id="cmp9466C8460D8E7244E250CB52CBA31FBF" />
+            <ComponentRef Id="cmpBC4E046E56032A80CA9312F07ED4E23A" />
+            <ComponentRef Id="cmpCB4CF12AE13B498164BD6122A185419F" />
         </ComponentGroup>
     </Fragment>
 </Wix>
