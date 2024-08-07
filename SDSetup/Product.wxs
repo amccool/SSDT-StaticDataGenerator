@@ -13,7 +13,7 @@
 
         <Directory Name="SourceDir" Id="TARGETDIR">
             <Directory Name="ProgramFilesFolder" Id="ProgramFilesFolder">
-              <Directory Name="Static Data Script Generator" Id="APPLICATIONFOLDER"/>
+              <Directory Name="Static Data Script Generator" Id="INSTALLFOLDER"/>
             </Directory>
         </Directory>
 
@@ -37,7 +37,7 @@
                     </Component>-->
 
         <Feature Id="AllFeatures" Title="All Features" Level="1">
-          <ComponentGroupRef Id="Binaries"/>
+          <ComponentGroupRef Id="cmp_INSTALLFOLDER"/>
         </Feature>
 
     </Product>

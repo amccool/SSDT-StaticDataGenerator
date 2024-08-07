@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Collections;
 using Microsoft.Data.ConnectionUI;
+using SSDTThing;
 
 namespace StaticGenerator
 {
