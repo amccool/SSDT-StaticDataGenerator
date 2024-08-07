@@ -135,5 +135,5 @@ jobs:
       with:
         name: stuff
         path: |
-          **/*.msi
-          **/bin/${{ matrix.configuration }}/
+          **/SDSetup.msi
+          **/Win/bin/${{ matrix.configuration }}/
