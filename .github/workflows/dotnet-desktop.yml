@@ -131,7 +131,9 @@ jobs:
 #        path: ${{ env.Wap_Project_Directory }}\AppPackages
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: MSIX Package
-        path: .        
+        name: stuff
+        path: |
+          **/*.msi
+          **/bin/${{ matrix.configuration }}/
