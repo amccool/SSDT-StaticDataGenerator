@@ -66,7 +66,7 @@
   <!-- <PropertyGroup>
     <PreBuildEvent>..\packages\wix.3.14.1\tools\heat.exe dir ..\Win\bin\$(ConfigurationName)  -var var.StaticGenerator.TargetDir -dr APPLICATIONFOLDER -cg Binaries -ag -scom -sreg -sfrag –srd -o $(ProjectName).Binaries.wxs</PreBuildEvent>
   </PropertyGroup> -->
-  <!--
+git   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.
 	Other similar extension points exist, see Wix.targets.
 	<Target Name="BeforeBuild">
