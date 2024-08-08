@@ -2,29 +2,23 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
     <Fragment>
         <DirectoryRef Id="INSTALLFOLDER">
-            <Component Id="cmp1D946EA74B2E5D0E63840DF89C59EAE1" Guid="{D4481E04-1B9E-462C-8835-90F9CD7101B5}">
+            <Component Id="cmp1D946EA74B2E5D0E63840DF89C59EAE1" Guid="{CE700DA4-B338-49A8-A55D-23106CC86FDB}">
                 <File Id="fil0B35192EC2221A75F7D5BB84F8AE5339" KeyPath="yes" Source="$(var.BasePath)\DefaultTemplate.sql" />
             </Component>
-            <Component Id="cmpEC01AF6B8D5EF8A05804D3A5F37944D6" Guid="{DA82CF0F-9C96-492A-AEA1-339CD8AC2626}">
+            <Component Id="cmpEC01AF6B8D5EF8A05804D3A5F37944D6" Guid="{884CF9A5-A4F0-4C58-96FD-02E817E85B3C}">
                 <File Id="fil20DC857D6CED75D4350C99240E49B652" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Data.ConnectionUI.Dialog.dll" />
             </Component>
-            <Component Id="cmp19C95D2CAC7F2E9CC50214C3520486AF" Guid="{065E287E-CC8D-489D-B8EB-E134A7319183}">
+            <Component Id="cmp19C95D2CAC7F2E9CC50214C3520486AF" Guid="{E25F4F82-7E41-437A-9DF5-647CBC136D50}">
                 <File Id="filFDEA74E52032BF1EB6936EA12C942E38" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Data.ConnectionUI.dll" />
             </Component>
-            <Component Id="cmpAC33A12E307CAEF9F2B14852E7D12BC0" Guid="{59FDAE96-D6EE-4497-B7D6-F0973B73279E}">
+            <Component Id="cmpAC33A12E307CAEF9F2B14852E7D12BC0" Guid="{171B9081-1A85-4BEA-A2F3-23B34A062ECE}">
                 <File Id="fil4DD3815AE4446001D614F1BA78F63C3E" KeyPath="yes" Source="$(var.BasePath)\Static Data Script Generator.exe" />
             </Component>
-            <Component Id="cmpD2AEE67DA8242957FE1AEEA005676F58" Guid="{0D11CC4F-F68A-4DB4-8CC7-B351331F48EA}">
+            <Component Id="cmpD2AEE67DA8242957FE1AEEA005676F58" Guid="{6D885BAA-A70F-4263-9EB9-B0957E154DD7}">
                 <File Id="fil2FC0E7E7A2DA574284860057EBCD006B" KeyPath="yes" Source="$(var.BasePath)\Static Data Script Generator.exe.config" />
             </Component>
-            <Component Id="cmp9466C8460D8E7244E250CB52CBA31FBF" Guid="{40C8D717-8F03-41DD-BA08-9B29E722F17D}">
+            <Component Id="cmp9466C8460D8E7244E250CB52CBA31FBF" Guid="{626F8E50-D9F6-4F57-8930-36BF530EEE4B}">
                 <File Id="filF50F17721A1A916315E9791BBD8E2E97" KeyPath="yes" Source="$(var.BasePath)\Static Data Script Generator.pdb" />
-            </Component>
-            <Component Id="cmpBC4E046E56032A80CA9312F07ED4E23A" Guid="{6C26895A-494E-46FC-A639-69474C51FE2A}">
-                <File Id="filA43958CC89AD68751040134A46715A7B" KeyPath="yes" Source="$(var.BasePath)\StaticGeneratorCommon.dll" />
-            </Component>
-            <Component Id="cmpCB4CF12AE13B498164BD6122A185419F" Guid="{FD7E7194-D380-45D2-962E-559CFBE63776}">
-                <File Id="fil91849FBCF8F2DA9C500C7AE16D2836E8" KeyPath="yes" Source="$(var.BasePath)\StaticGeneratorCommon.pdb" />
             </Component>
         </DirectoryRef>
     </Fragment>
@@ -36,8 +30,6 @@
             <ComponentRef Id="cmpAC33A12E307CAEF9F2B14852E7D12BC0" />
             <ComponentRef Id="cmpD2AEE67DA8242957FE1AEEA005676F58" />
             <ComponentRef Id="cmp9466C8460D8E7244E250CB52CBA31FBF" />
-            <ComponentRef Id="cmpBC4E046E56032A80CA9312F07ED4E23A" />
-            <ComponentRef Id="cmpCB4CF12AE13B498164BD6122A185419F" />
         </ComponentGroup>
     </Fragment>
 </Wix>
