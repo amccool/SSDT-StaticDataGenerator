@@ -2,24 +2,235 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
     <Fragment>
         <DirectoryRef Id="INSTALLFOLDER">
-            <Component Id="cmp1D946EA74B2E5D0E63840DF89C59EAE1" Guid="{CE700DA4-B338-49A8-A55D-23106CC86FDB}">
+            <Component Id="cmp1D946EA74B2E5D0E63840DF89C59EAE1" Guid="{E44F78DD-7185-42AF-8B78-DAC39C266AC1}">
                 <File Id="fil0B35192EC2221A75F7D5BB84F8AE5339" KeyPath="yes" Source="$(var.BasePath)\DefaultTemplate.sql" />
             </Component>
-            <Component Id="cmpEC01AF6B8D5EF8A05804D3A5F37944D6" Guid="{884CF9A5-A4F0-4C58-96FD-02E817E85B3C}">
+            <Component Id="cmpEC01AF6B8D5EF8A05804D3A5F37944D6" Guid="{4B7F8A15-1629-4BF4-B447-5137FD36D407}">
                 <File Id="fil20DC857D6CED75D4350C99240E49B652" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Data.ConnectionUI.Dialog.dll" />
             </Component>
-            <Component Id="cmp19C95D2CAC7F2E9CC50214C3520486AF" Guid="{E25F4F82-7E41-437A-9DF5-647CBC136D50}">
+            <Component Id="cmp19C95D2CAC7F2E9CC50214C3520486AF" Guid="{C588741A-F2C5-4EBB-8BB5-8FF70345B854}">
                 <File Id="filFDEA74E52032BF1EB6936EA12C942E38" KeyPath="yes" Source="$(var.BasePath)\Microsoft.Data.ConnectionUI.dll" />
             </Component>
-            <Component Id="cmpAC33A12E307CAEF9F2B14852E7D12BC0" Guid="{171B9081-1A85-4BEA-A2F3-23B34A062ECE}">
+            <Component Id="cmpAC33A12E307CAEF9F2B14852E7D12BC0" Guid="{5F9658A1-DAA6-484C-B0B5-893C1051BDCB}">
                 <File Id="fil4DD3815AE4446001D614F1BA78F63C3E" KeyPath="yes" Source="$(var.BasePath)\Static Data Script Generator.exe" />
             </Component>
-            <Component Id="cmpD2AEE67DA8242957FE1AEEA005676F58" Guid="{6D885BAA-A70F-4263-9EB9-B0957E154DD7}">
+            <Component Id="cmpD2AEE67DA8242957FE1AEEA005676F58" Guid="{4A1C98F9-35D7-45F3-8196-AE393E162C30}">
                 <File Id="fil2FC0E7E7A2DA574284860057EBCD006B" KeyPath="yes" Source="$(var.BasePath)\Static Data Script Generator.exe.config" />
             </Component>
-            <Component Id="cmp9466C8460D8E7244E250CB52CBA31FBF" Guid="{626F8E50-D9F6-4F57-8930-36BF530EEE4B}">
+            <Component Id="cmp9466C8460D8E7244E250CB52CBA31FBF" Guid="{C83D5D63-FA13-40A1-A01C-4326C06E84D3}">
                 <File Id="filF50F17721A1A916315E9791BBD8E2E97" KeyPath="yes" Source="$(var.BasePath)\Static Data Script Generator.pdb" />
             </Component>
+            <Directory Id="dirFF0954B0E83DB3B2C187B429647147CE" Name="net8.0-windows">
+                <Component Id="cmp6CDFA1B0F4ADA7A5E503001C2AD8AAAB" Guid="{0EF178A0-0757-46E3-9FDF-104FE6190329}">
+                    <File Id="filFB430B72CFD8FC2763605BF82F98A197" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Azure.Core.dll" />
+                </Component>
+                <Component Id="cmpACB8D67C42E761A32ABBC212E34D73F9" Guid="{8CA8FF7F-23AE-4C2F-9D57-FB3173D5B0C5}">
+                    <File Id="fil88981EF1592EA327EF1F4F1BAB148889" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Azure.Identity.dll" />
+                </Component>
+                <Component Id="cmp3E96958D3516A51551D2F0C970A0A42A" Guid="{2F8AF89B-FE0F-4379-AC49-AFC0A5A85E52}">
+                    <File Id="filECB789619EB4EB89965582FF5597C436" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\DefaultTemplate.sql" />
+                </Component>
+                <Component Id="cmpA1D10FFFAC702508629837F53ED47C0A" Guid="{139E6E2E-3371-4A2D-805B-459EA4120C4C}">
+                    <File Id="fil2E569CC84ED7B846E138CC716FDD49CB" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll" />
+                </Component>
+                <Component Id="cmp922AB05F1381814C21D1C5B097A6B934" Guid="{9B1C6547-2669-4A87-96E9-6A0B1CED5A46}">
+                    <File Id="filF05B425281D7B8E58118ACE64060458C" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.Data.ConnectionUI.Dialog.dll" />
+                </Component>
+                <Component Id="cmp52EA9001B7D4873CE5A3E9912FD2DDA7" Guid="{A4C6BC1E-8C21-4EDE-8817-871DB318FA5F}">
+                    <File Id="fil54596FF2EEA410EF6D0671170F42619A" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.Data.ConnectionUI.dll" />
+                </Component>
+                <Component Id="cmp5D45AC0751C6172A0F89323A90A4423F" Guid="{3F7D9BB2-208B-4E2A-B482-05C6E64BA6A0}">
+                    <File Id="filB8007477051B913C44E9372D7880C1A6" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.Data.SqlClient.dll" />
+                </Component>
+                <Component Id="cmp9D36936D834635DB2B42E96DB439C261" Guid="{74CE1B08-E2E5-4BF8-8549-4B5F0104D1FD}">
+                    <File Id="fil4D1CD626089657A602B976350BCBA864" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.Identity.Client.dll" />
+                </Component>
+                <Component Id="cmpC2388FE574FBE6000EC20BE20BF098D7" Guid="{5479B1EF-7388-4867-8010-E2D212016091}">
+                    <File Id="fil303B4432F807ACA27B2AB5F9C95C5BDF" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll" />
+                </Component>
+                <Component Id="cmp54FA375BADE0B372DED34000184D6C00" Guid="{A9FE0A76-3877-4182-A7AD-E2CCD71666D7}">
+                    <File Id="fil205EF166478C2953445748F30DA6691A" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll" />
+                </Component>
+                <Component Id="cmpF91CDA9CE5E4E59C30A3155302F12F97" Guid="{AF2C9312-F1E2-40EE-B9C3-D2BA67B2D137}">
+                    <File Id="fil07C964106871E9CEB3FC58297B796EFE" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll" />
+                </Component>
+                <Component Id="cmpF38EF8D837655AFE0291ABA26ECEA596" Guid="{5A1DCFB9-D5FD-4A4F-9230-7683F55822CE}">
+                    <File Id="fil05B949718234BB9112CF0C86CA4E66C5" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll" />
+                </Component>
+                <Component Id="cmp1E7A8E330EE4F9390D0797A6CAD41FD3" Guid="{DEE58D98-9A0E-4B51-A5C1-66B8C144DAE4}">
+                    <File Id="fil6A6FEA544828969BDD1A6B98FA635A9C" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.IdentityModel.Logging.dll" />
+                </Component>
+                <Component Id="cmp914951B8A0C26DB145FACA0F38604865" Guid="{8755152B-C75F-4487-BAA6-D4075A9B7B9F}">
+                    <File Id="fil3C809F51ED5A2564122F24ECBA1F40C2" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.IdentityModel.Protocols.dll" />
+                </Component>
+                <Component Id="cmp2A9B1A686EEA42FCFFD676A6F8263F44" Guid="{4AFF0AA4-6891-46CC-BA67-80732D7F5213}">
+                    <File Id="fil7D62D8FC4B5426330AAE7E7CA418554E" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" />
+                </Component>
+                <Component Id="cmp50FB6334EEF67ADB251BB2E689E6FB6A" Guid="{A55E2963-538E-43AC-A519-5DB3A510505B}">
+                    <File Id="fil6CF5B203904BD6A545FC1C4A5B9C0730" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.IdentityModel.Tokens.dll" />
+                </Component>
+                <Component Id="cmp6BEA9C4F8A390F90198065CB6765F3A4" Guid="{34039EDC-689F-4F9B-9168-642B0EE8E2CD}">
+                    <File Id="filD8CBA878B63D655D58410DF6168A9151" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.SqlServer.Server.dll" />
+                </Component>
+                <Component Id="cmp4781183549D2CD3DFEE4CFC580DF218F" Guid="{FA535FD7-3C7F-4360-B89F-0E678EC6701A}">
+                    <File Id="filBDB1F768F803601E53CEC1FB6EB44534" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.Web.WebView2.Core.dll" />
+                </Component>
+                <Component Id="cmpE926CBEAEAFDBDD11859783A35EDE9E9" Guid="{507179BD-7097-4C48-B5BF-7A898953D38A}">
+                    <File Id="fil5A00FD4CCF22B8DC63FBA48707750657" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll" />
+                </Component>
+                <Component Id="cmp3432A554D8C9162647EB8ECB58811FE4" Guid="{B44FA27B-B2A3-469A-AC2C-21B1B98B06A2}">
+                    <File Id="fil73C311C3D0A1744AB5F33F36D5BE7187" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll" />
+                </Component>
+                <Component Id="cmpA8585FDD7AC6244D792D865054B3D2B6" Guid="{7C5BC5CA-A486-4F00-BFFE-EC091F414C1A}">
+                    <File Id="fil4DF3924A88E46C1D3C5B30274DB03321" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Static Data Script Generator.deps.json" />
+                </Component>
+                <Component Id="cmpECE01D24024C7CA61A5766913111BE16" Guid="{2D065681-5B85-4611-86DF-59F6425A3CE4}">
+                    <File Id="filCFB2E33C585F455EA5EC6AC4E0B7F943" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Static Data Script Generator.dll" />
+                </Component>
+                <Component Id="cmpCF24BDF2E0F66EEFD3626A9BF4827B33" Guid="{38D8BA81-D9F9-44B8-BE26-75C91F979925}">
+                    <File Id="fil1EB1F3E79CB0A435355BCC9A4CB68617" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Static Data Script Generator.dll.config" />
+                </Component>
+                <Component Id="cmpAE850EC20E63763ECB7FFBBE8A3D57FA" Guid="{FC1AAAAB-70E0-4BDD-B2B0-3D23EAC4C2E5}">
+                    <File Id="filA42DE9D55F06C8E8EF519B55D7E22A95" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Static Data Script Generator.exe" />
+                </Component>
+                <Component Id="cmp3D415C7E4A3EE396409E1BCA4CD2432F" Guid="{05CD6910-933A-406D-88A8-8258C28BC6E2}">
+                    <File Id="fil03B9121C671B94F52452D045D262205D" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Static Data Script Generator.pdb" />
+                </Component>
+                <Component Id="cmp70B54A1CDEE4F59B236730780914F816" Guid="{4343074A-0935-415A-974C-5DFA6DB7F6EB}">
+                    <File Id="filAF527E59B1845C90B92EFFA2859C14E8" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\Static Data Script Generator.runtimeconfig.json" />
+                </Component>
+                <Component Id="cmpF046BD22E7BA75EA75745E8F4CAFA668" Guid="{EC4D849C-ADDA-47B9-95AD-3592E83573A7}">
+                    <File Id="filEB496675972DF4B1312BE7C8A2F12F95" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\System.ClientModel.dll" />
+                </Component>
+                <Component Id="cmpC25B68739996497D2AFB0E0894E723EC" Guid="{30890502-C2E9-420D-955D-AB8FE504460C}">
+                    <File Id="fil317F3C5CEB2B9096F2BE818D56A4DEE5" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll" />
+                </Component>
+                <Component Id="cmpDF961DA261C7C082C127756C2DC5FE11" Guid="{1D2871C4-99BF-44FB-8981-9058818CAB87}">
+                    <File Id="fil33F2F3A091451BB9BA28A0DA6E0763D2" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\System.Memory.Data.dll" />
+                </Component>
+                <Component Id="cmpAA430313FD77E510DB116E4A7F7C1CBC" Guid="{5C151BEB-32F6-43BC-BE53-8CD2CB54F0D0}">
+                    <File Id="filBBC8E80317B01ADB0579D44D5AB36496" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\System.Runtime.Caching.dll" />
+                </Component>
+                <Directory Id="dirC6DB8CD2983AAF3F919CC2E0A411868F" Name="de">
+                    <Component Id="cmp6C82CFD82F1625A1BD9E3D0240CCE264" Guid="{0BDD4806-066F-436B-9E41-1F34BF9D33C6}">
+                        <File Id="fil3581C65E3333D176192913158157A75B" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir5B49ECD34261AAE00E4EB45122C55F2F" Name="es">
+                    <Component Id="cmp1368577785FBC27618DF11FB521A095A" Guid="{5B2A9F57-B9E8-40A9-A5F4-3F10376F1ED5}">
+                        <File Id="fil8E02B2469A60ED76DEECD45284E3A16D" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirC1F4C14EA6F963D87F245545E0B20C4F" Name="fr">
+                    <Component Id="cmp4162DDC6593D6A4273AEC28F3634E5E8" Guid="{1C7FE4C0-3558-4B36-8BB9-E88AE1A5E9FE}">
+                        <File Id="fil1830733816038572DC16AC99F956875D" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir03DB0D67E31CDB8962E55803C93591D7" Name="it">
+                    <Component Id="cmpFC130F852E1D2D8E97DDA3D6EFF1C937" Guid="{0143CF47-3E39-430B-8D25-985D38EFD0F0}">
+                        <File Id="fil95180728FB49A4D06122EA4E8E6E5CB5" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir4A35534E0D239EA05441116ECF010059" Name="ja">
+                    <Component Id="cmpFE89E38B8E953B558B7A0169B44C5A4D" Guid="{E15919C5-8ED2-42AD-AD7C-7A2D758E4CB7}">
+                        <File Id="fil94A22CDD04D0E7D72E36AA4A4DA372C2" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirD43806CA6BC60DB737283DB1B92C9BED" Name="ko">
+                    <Component Id="cmp3FD23C735C969B3216918DC069E9DBF6" Guid="{9A68B6AB-F092-4F5F-8C36-D44E0FE12F84}">
+                        <File Id="fil3727551AD003B05162A77E95CA73C1B9" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir3B2553D175644EBC3734F36F1FFA7CEF" Name="pt-BR">
+                    <Component Id="cmp074F732EEDC1615C17E6AC5E4C4D95C5" Guid="{1286E27E-96BB-451C-BA23-FB6631236D48}">
+                        <File Id="fil497C235FB1EE6927C95552C8481CB9EF" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dirBD250810F4E6327CED2B4F74288CFF65" Name="ru">
+                    <Component Id="cmpFE627E3CC7E6DBC5C8BCAD6C7328536D" Guid="{91ED46A1-91B6-495B-B26E-1C4F80A85CA8}">
+                        <File Id="fil1EAFA839693020BECA0DF8F36231C36F" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir75239EFC1CA348049F295814AEB3EBA7" Name="runtimes">
+                    <Directory Id="dirCF822524478FD9C5CA808E7025922783" Name="unix">
+                        <Directory Id="dir287A4C032E2A2A1541CA5794707A199E" Name="lib">
+                            <Directory Id="dirF09694EB7461BE7474A875BF5B7EECE2" Name="net8.0">
+                                <Component Id="cmp784F8F8260188BCED41C8F604C461D09" Guid="{5FD288A3-ADF4-4320-A343-4262CF412EBB}">
+                                    <File Id="filC2D8A54823723F48B42CBF6187288954" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll" />
+                                </Component>
+                            </Directory>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="dirAC4457466EAD992D8359409789C2FF55" Name="win">
+                        <Directory Id="dirF90EA50344DA56BC9DBB4E3A19A529F2" Name="lib">
+                            <Directory Id="dirAD0B9A6AA22ECC307F61505FC8A93052" Name="net8.0">
+                                <Component Id="cmpFEF53B41C28E974D9147A01FDE86EA1C" Guid="{EC45102A-7A09-4041-B019-FFE084C67C71}">
+                                    <File Id="filA8D89260D1E62FFF24ACC12D643243AB" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll" />
+                                </Component>
+                                <Component Id="cmp52CC0E20E7CC5385D657706512CB882A" Guid="{F9D070F2-531F-482F-BCC1-0C7B17164D09}">
+                                    <File Id="fil4F6FFF59E098D7336C50E5EEB42BB1CB" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\runtimes\win\lib\net8.0\System.Runtime.Caching.dll" />
+                                </Component>
+                            </Directory>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="dir8DFCB466D2EE3D5D9905FC2CA69D94AF" Name="win-arm">
+                        <Directory Id="dir08CAFE78407F3E41942708DEF3504A33" Name="native">
+                            <Component Id="cmp3F36917460D0CE1897EBA3B0DCDA8BDE" Guid="{DEA3537E-5FA9-46B7-9C83-C8926379E5D7}">
+                                <File Id="fil09A7AB1360CB16DACF64BFEF7553DB93" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="dirF54C9F2748885B8D51713A55D4202BB5" Name="win-arm64">
+                        <Directory Id="dirD596EE97A5FB9722EDE02653F8932EDF" Name="native">
+                            <Component Id="cmp3CFC32E338B754C5C6701107134F26DA" Guid="{2D7C3078-BC4B-409B-91A5-E8AD37693C9A}">
+                                <File Id="fil967B500B4FA80F1AC723206D7FA78EC5" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll" />
+                            </Component>
+                            <Component Id="cmp16CBB07B8B4432E7FF4FC01ADE4B6D56" Guid="{76B4EBAE-CAE7-4270-8A47-A658B7C54331}">
+                                <File Id="fil2C59549A1824690B9BA56B257A70F551" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll" />
+                            </Component>
+                            <Component Id="cmp9FC3C431C90DFA0639A3AD08DD829365" Guid="{52578307-D72B-4EEF-836C-ABDD1F9DC775}">
+                                <File Id="fil82ADB5057C7183C82E95CBE58B5FFB08" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="dir1093530BA4B72917D4DD41116C96AA87" Name="win-x64">
+                        <Directory Id="dir9E4547619A01E001E0A43F9E05D39837" Name="native">
+                            <Component Id="cmpA431A24182975225E08ED6C8DC35D540" Guid="{E1E5F57E-CF30-4AB2-A421-0F2E12EC98CD}">
+                                <File Id="fil9F2DE2E4D79909D4F7F18FD666BB2938" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll" />
+                            </Component>
+                            <Component Id="cmpC11157E643F7FBD35944180BB4EE1CEB" Guid="{58FC9E71-D4D7-4181-B2C4-25C27D42A3C3}">
+                                <File Id="filF619AD3A06EE437F078031EE755E8608" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\runtimes\win-x64\native\msalruntime.dll" />
+                            </Component>
+                            <Component Id="cmp0EB31C5726617594A83201774C9E4A84" Guid="{A686CD4C-65E9-453D-AAAF-111E19C36C4D}">
+                                <File Id="fil4511A111F54B9EE8484E48356C5D06FE" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="dir19AD833738C1353837FC1C3E43C12DFD" Name="win-x86">
+                        <Directory Id="dir2A183D0A51ABCF476609F11343023B52" Name="native">
+                            <Component Id="cmpA0260F782CF2FB87D28392CAA5F2D640" Guid="{17B0373E-F867-4BB6-BBCB-7CBBB141F177}">
+                                <File Id="fil2073EC2901D6730613163E18A3CBA4DE" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll" />
+                            </Component>
+                            <Component Id="cmp1D178BFB35296586F994B12EB2A89175" Guid="{8C8B588B-800D-410A-B143-FD0792812ECC}">
+                                <File Id="fil5B4E66F198D6E1223172E14E3DEE40A6" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll" />
+                            </Component>
+                            <Component Id="cmpE119FEBDFC9083227D9A214CC84596A6" Guid="{BECE946B-7DCC-4F99-9976-8F5B9B353A33}">
+                                <File Id="filBEAC292C9A9073258B52FC487EE9EF0F" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                </Directory>
+                <Directory Id="dir1DE10E0163028A9502E791654F2884A4" Name="zh-Hans">
+                    <Component Id="cmp542B0E3F13A3CDDB382E12F611B25B67" Guid="{1C8791A1-672B-48F7-B13F-7207B9C4E2A6}">
+                        <File Id="filF15B198B4651B2BC3A69A4D5C2CD0FB9" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir3D6F03CB7F1EF3EABF3AE688AC2384C2" Name="zh-Hant">
+                    <Component Id="cmpB020AB0FCCC1226B8AC0EAF0E6C89632" Guid="{08E93831-F49C-4E6D-94AE-CB0220080959}">
+                        <File Id="fil084F9A57106D8BCD617B439FFE90EBC7" KeyPath="yes" Source="$(var.BasePath)\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll" />
+                    </Component>
+                </Directory>
+            </Directory>
         </DirectoryRef>
     </Fragment>
     <Fragment>
@@ -30,6 +241,59 @@
             <ComponentRef Id="cmpAC33A12E307CAEF9F2B14852E7D12BC0" />
             <ComponentRef Id="cmpD2AEE67DA8242957FE1AEEA005676F58" />
             <ComponentRef Id="cmp9466C8460D8E7244E250CB52CBA31FBF" />
+            <ComponentRef Id="cmp6CDFA1B0F4ADA7A5E503001C2AD8AAAB" />
+            <ComponentRef Id="cmpACB8D67C42E761A32ABBC212E34D73F9" />
+            <ComponentRef Id="cmp3E96958D3516A51551D2F0C970A0A42A" />
+            <ComponentRef Id="cmpA1D10FFFAC702508629837F53ED47C0A" />
+            <ComponentRef Id="cmp922AB05F1381814C21D1C5B097A6B934" />
+            <ComponentRef Id="cmp52EA9001B7D4873CE5A3E9912FD2DDA7" />
+            <ComponentRef Id="cmp5D45AC0751C6172A0F89323A90A4423F" />
+            <ComponentRef Id="cmp9D36936D834635DB2B42E96DB439C261" />
+            <ComponentRef Id="cmpC2388FE574FBE6000EC20BE20BF098D7" />
+            <ComponentRef Id="cmp54FA375BADE0B372DED34000184D6C00" />
+            <ComponentRef Id="cmpF91CDA9CE5E4E59C30A3155302F12F97" />
+            <ComponentRef Id="cmpF38EF8D837655AFE0291ABA26ECEA596" />
+            <ComponentRef Id="cmp1E7A8E330EE4F9390D0797A6CAD41FD3" />
+            <ComponentRef Id="cmp914951B8A0C26DB145FACA0F38604865" />
+            <ComponentRef Id="cmp2A9B1A686EEA42FCFFD676A6F8263F44" />
+            <ComponentRef Id="cmp50FB6334EEF67ADB251BB2E689E6FB6A" />
+            <ComponentRef Id="cmp6BEA9C4F8A390F90198065CB6765F3A4" />
+            <ComponentRef Id="cmp4781183549D2CD3DFEE4CFC580DF218F" />
+            <ComponentRef Id="cmpE926CBEAEAFDBDD11859783A35EDE9E9" />
+            <ComponentRef Id="cmp3432A554D8C9162647EB8ECB58811FE4" />
+            <ComponentRef Id="cmpA8585FDD7AC6244D792D865054B3D2B6" />
+            <ComponentRef Id="cmpECE01D24024C7CA61A5766913111BE16" />
+            <ComponentRef Id="cmpCF24BDF2E0F66EEFD3626A9BF4827B33" />
+            <ComponentRef Id="cmpAE850EC20E63763ECB7FFBBE8A3D57FA" />
+            <ComponentRef Id="cmp3D415C7E4A3EE396409E1BCA4CD2432F" />
+            <ComponentRef Id="cmp70B54A1CDEE4F59B236730780914F816" />
+            <ComponentRef Id="cmpF046BD22E7BA75EA75745E8F4CAFA668" />
+            <ComponentRef Id="cmpC25B68739996497D2AFB0E0894E723EC" />
+            <ComponentRef Id="cmpDF961DA261C7C082C127756C2DC5FE11" />
+            <ComponentRef Id="cmpAA430313FD77E510DB116E4A7F7C1CBC" />
+            <ComponentRef Id="cmp6C82CFD82F1625A1BD9E3D0240CCE264" />
+            <ComponentRef Id="cmp1368577785FBC27618DF11FB521A095A" />
+            <ComponentRef Id="cmp4162DDC6593D6A4273AEC28F3634E5E8" />
+            <ComponentRef Id="cmpFC130F852E1D2D8E97DDA3D6EFF1C937" />
+            <ComponentRef Id="cmpFE89E38B8E953B558B7A0169B44C5A4D" />
+            <ComponentRef Id="cmp3FD23C735C969B3216918DC069E9DBF6" />
+            <ComponentRef Id="cmp074F732EEDC1615C17E6AC5E4C4D95C5" />
+            <ComponentRef Id="cmpFE627E3CC7E6DBC5C8BCAD6C7328536D" />
+            <ComponentRef Id="cmp784F8F8260188BCED41C8F604C461D09" />
+            <ComponentRef Id="cmpFEF53B41C28E974D9147A01FDE86EA1C" />
+            <ComponentRef Id="cmp52CC0E20E7CC5385D657706512CB882A" />
+            <ComponentRef Id="cmp3F36917460D0CE1897EBA3B0DCDA8BDE" />
+            <ComponentRef Id="cmp3CFC32E338B754C5C6701107134F26DA" />
+            <ComponentRef Id="cmp16CBB07B8B4432E7FF4FC01ADE4B6D56" />
+            <ComponentRef Id="cmp9FC3C431C90DFA0639A3AD08DD829365" />
+            <ComponentRef Id="cmpA431A24182975225E08ED6C8DC35D540" />
+            <ComponentRef Id="cmpC11157E643F7FBD35944180BB4EE1CEB" />
+            <ComponentRef Id="cmp0EB31C5726617594A83201774C9E4A84" />
+            <ComponentRef Id="cmpA0260F782CF2FB87D28392CAA5F2D640" />
+            <ComponentRef Id="cmp1D178BFB35296586F994B12EB2A89175" />
+            <ComponentRef Id="cmpE119FEBDFC9083227D9A214CC84596A6" />
+            <ComponentRef Id="cmp542B0E3F13A3CDDB382E12F611B25B67" />
+            <ComponentRef Id="cmpB020AB0FCCC1226B8AC0EAF0E6C89632" />
         </ComponentGroup>
     </Fragment>
 </Wix>

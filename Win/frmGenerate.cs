@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Configuration;
 using StaticGeneratorCommon;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.IO;
 using System.Collections;
 using Microsoft.Data.ConnectionUI;
